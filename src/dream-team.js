@@ -15,9 +15,11 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function createDreamTeam(members) {
   let team = [];
+
   if (!Array.isArray(members)) {
     return false;
-  }
+  };
+
   members.forEach((elem) => {
     if (typeof elem === 'string') {
       let firstLetter = elem.trim()
@@ -25,10 +27,11 @@ function createDreamTeam(members) {
         .split('')
         .slice(0, 1);
       team.push(firstLetter);
-    }
-  })
+    };
+  });
+
   return team.sort().join('');
-}
+};
 
 module.exports = {
   createDreamTeam
